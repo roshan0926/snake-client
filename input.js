@@ -1,38 +1,13 @@
+const { keyInput }= require('./constants');
+
 let connection;
 
-const handleUserInput = (key) => {
-  if (key === '\u0003') {
+const handleUserInput = (key, connection) => {
+  if (key === "\u0003") {
     process.exit();
   }
-  connection.write(key);
-  if (key === 'w') {
-    connection.write("Move: up")
-  }
-  if (key === 'a') {
-    connection.write("Move: left")
-  }
-  if (key === 's') {
-    connection.write("Move: down")
-  }
-  if (key === 'd') {
-    connection.write("Move: right")
-  }
-  if (key === 'q') {
-    connection.write("Say: Hey, whats up")
-  }
-  if (key === 'e') {
-    connection.write("Say: assassination attempt?")
-  }
-  if (key === 'r') {
-    connection.write("Say: close call")
-  }
-  if (key === 't') {
-    connection.write("Say: Well played")
-  }
-  if (key === 'g') {
-    connection.write("Say: GG")
-  }
-}
+  connection.write(keyInput[key]);
+};
  
 
 const setupInput = function(conn) {
@@ -42,10 +17,9 @@ const setupInput = function(conn) {
   stdin.setEncoding('utf8');
   stdin.resume();
   stdin.on('data', key => {
-    handleUserInput(key);
+    handleUserInput(key, connection);
   });
   return stdin;
 }
 
 module.exports = setupInput;
-
