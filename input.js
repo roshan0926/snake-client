@@ -17,6 +17,21 @@ const handleUserInput = (key) => {
   if (key === 'd') {
     connection.write("Move: right")
   }
+  if (key === 'q') {
+    connection.write("Say: Hey, whats up")
+  }
+  if (key === 'e') {
+    connection.write("Say: assassination attempt?")
+  }
+  if (key === 'r') {
+    connection.write("Say: close call")
+  }
+  if (key === 't') {
+    connection.write("Say: Well played")
+  }
+  if (key === 'g') {
+    connection.write("Say: GG")
+  }
 }
  
 
