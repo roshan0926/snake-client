@@ -6,8 +6,13 @@ const connect = function() {
   });
   
   conn.on('connect', () => {
+    // let spaced = 50
     console.log('Successfully connected to game server');
     conn.write('Name: RNA');
+    // for (let i = 0; i < 10; i++){
+    setInterval(() => {conn.write('Move: up')}, 50)
+    // spaced +=50
+    // conn.write("Move: up")
     return;
   });
   conn.on('data', (message) => {console.log('you ded cuz you idled')})
@@ -19,8 +24,22 @@ const connect = function() {
 }
 module.exports = connect;
 
+// let spaced = 100;
+
+// for (const i of spinner) {
+//   setTimeout(() => {
+//     process.stdout.write(i);
+//   }, spaced)
+//   spaced += 200;
+// }
 
 // server.on('connection', (client) => {
 //   console.log('New client connected!');
 //   client.write('Hello there!');
 // });
+
+// for (let i in sentence) {
+//   setTimeout(() => {
+//     process.stdout.write(sentence[i])
+//   },50 * i);
+// };
