@@ -10,7 +10,7 @@ const connect = function() {
     console.log('Successfully connected to game server');
     conn.write('Name: RNA');
     // for (let i = 0; i < 10; i++){
-    setInterval(() => {conn.write('Move: up')}, 50)
+    // setInterval(() => {conn.write('Move: up')}, 50)
     // spaced +=50
     // conn.write("Move: up")
     return;
@@ -24,22 +24,4 @@ const connect = function() {
 }
 module.exports = connect;
 
-// let spaced = 100;
 
-// for (const i of spinner) {
-//   setTimeout(() => {
-//     process.stdout.write(i);
-//   }, spaced)
-//   spaced += 200;
-// }
-
-// server.on('connection', (client) => {
-//   console.log('New client connected!');
-//   client.write('Hello there!');
-// });
-
-// for (let i in sentence) {
-//   setTimeout(() => {
-//     process.stdout.write(sentence[i])
-//   },50 * i);
-// };
